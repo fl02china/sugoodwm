@@ -1,0 +1,128 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        // classpath 'com.android.tools.build:gradle:3.0.0-alpha3'
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        //classpath 'com.android.tools.build:gradle:2.2.0'
+
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/httpmime-4.1.2.jar')
+    // compile files('libs/IndoorscapeAlbumPlugin.jar')
+    //compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/fastjson-1.1.51.android.jar')
+    compile files('libs/lite-orm-1.9.1.jar')
+    compile files('libs/alipaySdk-20170309.jar')
+    //
+    //广告轮播最新版本
+    //微信支付
+    //  compile project(path: ':banner')
+
+    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.zhy:flowlayout-lib:1.0.3'
+    compile 'com.bigkoo:pickerview:2.1.1'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'com.androidkun:xversionupdate:1.0.4'
+    compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.3.4'
+    compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.android.support:cardview-v7:25.0.0'
+
+    compile 'com.getui:sdk:2.+'
+    //compile 'com.getui:sdk:2.10.2.0'//个推
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+
+
+    defaultConfig {
+        applicationId "com.sugoodwaimai.app" // 程序的包名
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 4
+        versionName "2.2"
+        multiDexEnabled true  // 消去重复的jar 引用
+        manifestPlaceholders = [
+                GETUI_APP_ID : "8mhteooqnX7pr9Cm4v43lA",
+                GETUI_APP_KEY : "lWEiavO2f17ARAUmhZEhl4",
+                GETUI_APP_SECRET : "zuDKm5tngS83dLyBxzI5V5"
+        ]
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "x86_64"
+        }
+    }
+//    signingConfigs {
+//        debug {
+//            keyAlias "sugoodwaimai"
+//            keyPassword "sugood4"
+//            storeFile file("E:\\SuGoodApp\\GoApplication\\sugoodwaimai.jks")
+//            storePassword "sugood4"
+//        }
+//
+//    }
+
+
+    useLibrary 'org.apache.http.legacy'
+
+
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the activity_main source set.
+        // Adding new_good build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            //Zipalign优化
+            // zipAlignEnabled true
+//
+            //           移除无用的resource文件
+            // shrinkResources true
+
+            //签名
+            //   signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+        }
+    }
+}

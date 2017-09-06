@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="go_name">速购得</string>
+    <string name="app_name">八戒外卖1</string>
+    <string name="app_name_main">速购得</string>
+    <string name="action_settings"> </string>
+
+    <string name="bd_ak">M5GEU66ODRnKbLMphydwkzOEzqiIO518</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开后刷新</string>
+    <string name="pull_to_refresh_refreshing_label">刷新\u2026</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+
+    <string name="supermarket">超市</string>
+    <string name="takeaway">外卖</string>
+    <string name="supermaker_search_tips">搜索商家，品类或商圈</string>
+    <string name="supermaker_type_search_tips">搜索商品名称或商家</string>
+    <string name="market_main_activity">首页</string>
+    <string name="cigarette_product">烟酒补品</string>
+    <string name="daily_product">日用百货</string>
+    <string name="drink_product">奶酒饮料</string>
+    <string name="grain_product">粮油干调</string>
+    <string name="home_product">家居用品</string>
+    <string name="frozen_product">冷冻日配</string>
+    <string name="snacks_product">休闲食品</string>
+    <string name="bed_product">床上用品</string>
+    <string name="machine_product">家用电器</string>
+
+
+    <string name="sj_phone">商家电话</string>
+
+    <string name="user_name_tips">以英文字母或汉字开头，限4-16个字符，一个汉字为2个字符</string>
+    <string name="change_pwd_tips">我能遵守速购得的用户使用协议和国家的法律法规</string>
+    <string name="recharge_email_text">113****@qq.com</string>
+    <string name="photos_num">%1$d张</string>
+    <string name="commit">确定</string>
+    <string name="commit_num">确定(%1$d/%2$d)</string>
+    <string name="msg_no_camera">没找到摄像头</string>
+
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+    <string name="no_more">没有更多了</string>
+
+    <string name="order_all">全部</string>
+    <string name="order_ing">进行中</string>
+    <string name="order_wait">待支付</string>
+    <string name="order_pinjia">待评价</string>
+    <string name="order_cancle">取消</string>
+
+    <string name="tuangou_1">待使用</string>
+    <string name="tuangou_2">已使用</string>
+    <string name="tuangou_3">已取消</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="order_num">订单编号:</string>
+    <string name="order_tol">本单总计：</string>
+    <string name="ordertoo">再来一单</string>
+    <string name="pingjia">评价</string>
+    <string name="peisong">配送费：</string>
+    <string name="xiaoji">小计：</string>
+    <string name="st_shagnjia">商家已接单</string>
+    <string name="st_qs1">骑士已接单</string>
+    <string name="st_qs2">骑手已取餐</string>
+    <string name="st_qs3">骑手配送中</string>
+    <string name="st_pijia">收货待评价</string>
+
+    <string name="concentQS">联系骑手</string>
+    <string name="ing">进行中</string>
+    <string name="sp_num">商品（%1$d）</string>
+    <string name="addr">地址：</string>
+    <string name="tuangounum">团购号：</string>
+    <string name="usetime">有效期：</string>
+
+    <string name="sj_title">商家公告</string>
+    <string name="push_transmission_data">收到一条透传测试消息</string>
+    <string name="add_tag">添加标签</string>
+    <string name="add_tag_unknown_exception">设置标签失败，未知异常</string>
+    <string name="add_tag_success">接口调用成功</string>
+    <string name="add_tag_error_count">接口调用失败, tag数量过大, 最大不能超过200个</string>
+    <string name="add_tag_error_frequency">设置标签失败，频率过快</string>
+    <string name="add_tag_error_null">接口调用失败, tag 为空</string>
+    <string name="add_tag_error_repeat">设置标签失败, 标签重复</string>
+    <string name="add_tag_error_unbind">设置标签失败, 服务未初始化成功</string>
+    <string name="add_tag_error_not_online">还未登陆成功</string>
+    <string name="add_tag_error_black_list">该应用已经在黑名单中,请联系售后支持!</string>
+    <string name="add_tag_error_exceed">已存 tag 超过限制</string>
+</resources>

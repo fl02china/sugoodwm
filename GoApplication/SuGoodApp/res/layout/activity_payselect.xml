@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#F1F0EE"
+    android:layout_height="match_parent">
+    <!--头部-->
+    <RelativeLayout
+        android:id="@+id/playselect_header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/red"
+        android:minHeight="40dp">
+
+
+        <ImageView
+            android:id="@+id/playselect_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_icon" />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="支付订单"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_middle"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="22dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tx_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="订单编号"
+
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+   />
+        <TextView
+            android:id="@+id/tx_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="时间"
+
+            android:textSize="12sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tx_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="订单编号"
+
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:id="@+id/tx_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="时间"
+            android:textColor="#f19149"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        >
+
+        <RadioButton
+            android:id="@+id/radio_weixin"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:button="@null"
+            android:padding="20dp"
+            android:checked="true"
+            android:drawableLeft="@drawable/icon_weixin"
+            android:drawableRight="@drawable/radio_button"
+
+            android:textColor="#6D6D6D" />
+
+        <RadioButton
+            android:id="@+id/radio_alipay"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:padding="20dp"
+            android:drawableLeft="@drawable/icon_aliplay"
+            android:drawableRight="@drawable/radio_button"
+            android:button="@null"
+
+            android:textColor="#6D6D6D" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/pay"
+        android:layout_width="270dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/shape_bule"
+        android:textColor="@color/white"
+        android:text="确定支付" />
+</LinearLayout>
