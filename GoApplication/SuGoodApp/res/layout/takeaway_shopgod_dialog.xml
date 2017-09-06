@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="12dp"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView_bg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+
+        android:scaleType="fitXY"
+          />
+
+
+    <TextView
+        android:id="@+id/takeaway_shop_dialog_food_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="香辣炸鸡饭"
+        android:textColor="#333333"
+
+
+        />
+    <TextView
+        android:id="@+id/takeaway_shop_food_sold_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="月售0"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_small" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="￥"
+            android:textColor="@color/text_yellow"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/takeaway_shop_dialog_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:text="28"
+            android:textColor="@color/text_yellow"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:id="@+id/takeaway_shop_car_add"
+            android:background="@drawable/add_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    <View
+        android:id="@+id/divider1"
+        style="@style/Divider"
+
+        android:layout_marginTop="10dp" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#333333"
+
+        android:layout_margin="10dp"
+        android:text="商品介绍"
+
+        />
+    <TextView
+        android:id="@+id/takeaway_shop_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#333333"
+        android:layout_margin="10dp"
+        android:text="商品介绍"
+
+        />
+
+</LinearLayout>

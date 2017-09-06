@@ -141,115 +141,38 @@ public class TakeawayOrderFoodAdapter extends RecyclerView.Adapter<TakeawayOrder
 
             }
         });
-
-        holder. mImageView.setOnClickListener(new View.OnClickListener() {111
+        //getItemView()
+        holder. getItemView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 final LayoutInflater mInflater = LayoutInflater.from(mContext);
 
 
-                View view = mInflater.inflate(R.layout.takeaway_shop_detail_dialog, null);
+                View view = mInflater.inflate(R.layout.takeaway_shopgod_dialog, null);
                 final MaterialDialog dialog = new MaterialDialog(mContext)
                         .setContentView(view)
                         .setCanceledOnTouchOutside(true);
                 dialog.show();
-                page = 1;
-                final TextView request = (TextView) view.findViewById(R.id.takeaway_shop_dialog_request_tv);
-                final TextView mAmount = (TextView) view.findViewById(R.id.takeaway_amount);
+
+                final ImageView mImageView = (ImageView) view.findViewById(R.id.imageView_bg);
+                GlideUtil.displayImage(Constant.PHOTOBASEURL + info.getPhoto(), mImageView);
                 final TextView mPrice = (TextView) view.findViewById(R.id.takeaway_shop_dialog_price);
+                final TextView mCount = (TextView) view.findViewById(R.id.takeaway_shop_food_sold_num_tv);
                 final TextView mFoodName = (TextView) view.findViewById(R.id.takeaway_shop_dialog_food_name);
-                final TextView mAdd = (TextView) view.findViewById(R.id.takeaway_add);
-                final TextView mReduce = (TextView) view.findViewById(R.id.takeaway_reduce);
-                final Button mAddShopCar = (Button) view.findViewById(R.id.takeaway_shop_car_add);
-                mAmount.setText("1");
+                final TextView mDesc = (TextView) view.findViewById(R.id.takeaway_shop_desc);
+                final ImageView mAddShopCar = (ImageView) view.findViewById(R.id.takeaway_shop_car_add);
+                mDesc.setText(info.getDesc());
                 mFoodName.setText(info.getProductName());
                 mPrice.setText(info.getPrice());
-
+                mCount.setText("月售"+info.getCount());
                 mAddShopCar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mOnShopCarClickListener.onClick(info.getProductName(), info.getIntPrice() * page, page, info.getProductId() + "",position);
+                        mOnShopCarClickListener.onClick(info.getProductName(), info.getIntPrice(), 1, info.getProductId() + "",position);
                         dialog.dismiss();
                     }
                 });
-                mAdd.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        page++;
-                        mAmount.setText("" + page);
-                        DecimalFormat df = new DecimalFormat("0.00");
-                        String allPrice = df.format(page * info.getIntPrice()); //6.20   这个是字符串，但已经是我要的两位小数了
-                        // String allPrice = page * info.getIntPrice() + "";
-
-
-//                        String result = allPrice.substring(0, allPrice.length() - 2) + "." + allPrice.substring(allPrice.length() - 2) + "元";
-                        mPrice.setText(allPrice + "元");
-
-                    }
-                });
-
-                mReduce.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (page > 1) {
-                            page--;
-                            mAmount.setText("" + page);
-                            String allPrice = page * info.getIntPrice() + "";
-                            mPrice.setText(allPrice + "元");
-                        }
-
-                    }
-                });
-
-
-                tagFlowLayout1 = (TagFlowLayout) view.findViewById(R.id.takeaway_shop_food_tabflowlayout1);
-                tagFlowLayout1.setAdapter(new TagAdapter<String>(attr1) {
-
-                    @Override
-                    public View getView(FlowLayout parent, int position, String s) {
-                        Log.i(TAG, "getView: " + s);
-                        TextView tv = (TextView) mInflater.inflate(R.layout.takeaway_shop_dialog_tab, parent, false);
-
-
-                        tv.setText(s);
-                        return tv;
-                    }
-                });
-
-                tagFlowLayout1.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
-                    @Override
-                    public boolean onTagClick(View view, int position, FlowLayout parent) {
-
-                        requestA = attr1[position];
-                        request.setText(requestA + " " + requestB);
-                        return true;
-                    }
-                });
-
-
-                tagFlowLayout2 = (TagFlowLayout) view.findViewById(R.id.takeaway_shop_food_tabflowlayout2);
-                tagFlowLayout2.setAdapter(new TagAdapter<String>(attr2) {
-
-                    @Override
-                    public View getView(FlowLayout parent, int position, String s) {
-                        Log.i(TAG, "getView: " + s);
-
-                        TextView tv = (TextView) LayoutInflater.from(mContext).inflate(R.layout.takeaway_shop_dialog_tab, tagFlowLayout2, false);
-                        tv.setText(s);
-
-                        return tv;
-                    }
-                });
-                tagFlowLayout2.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
-                    @Override
-                    public boolean onTagClick(View view, int position, FlowLayout parent) {
-                        requestB = attr2[position];
-                        request.setText(requestA + " " + requestB);
-                        return true;
-                    }
-                });
-
 
             }
         });
@@ -397,7 +320,9 @@ public class TakeawayOrderFoodAdapter extends RecyclerView.Adapter<TakeawayOrder
             this.view = itemView;
             ButterKnife.bind(this, itemView);
         }
-
+        View getItemView() {
+            return itemView;
+        }
         public View getView() {
             return view;
         }
