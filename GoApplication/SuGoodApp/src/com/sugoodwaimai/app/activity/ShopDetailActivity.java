@@ -44,16 +44,17 @@ public class ShopDetailActivity extends BaseActivity {
     private SimpleDraweeView sdvHeaderAD;
     private TextView tvFoodShopName;
     private RatingBar ratbarShop;
-    private LinearLayout llStar;
-    private TextView tvContentAverage;
-    private TextView tvGrade;
+   // private LinearLayout llStar;
+   // private TextView tvContentAverage;
+  //  private TextView tvGrade;
     private TextView tvShopAddr;
-    private RelativeLayout rlTel;
-    private TextView tvTel;
-    private RelativeLayout rlWaimai;
-    private TextView tvHadBuy;
-    private TextView tvFavorable1;
-    private TextView tvFavorable2;
+//    private RelativeLayout rlTel;
+//    private TextView tvTel;
+    private TextView   sj_tell;
+   // private RelativeLayout rlWaimai;
+   // private TextView tvHadBuy;
+//    private TextView tvFavorable1;
+//    private TextView tvFavorable2;
     private ListView lvCombo;
     private RelativeLayout rlDianping1;
     private RelativeLayout rlDianping2;
@@ -62,17 +63,19 @@ public class ShopDetailActivity extends BaseActivity {
     private RelativeLayout rlLookEvaluate;
     private SimpleDraweeView sdvAvatar1;
     private TextView tvUserName1;
-    private LinearLayout llStarEvaluate1;
-    private TextView tvScore1;
+    private TextView back;
+    //private LinearLayout llStarEvaluate1;
+   // private TextView tvScore1;
     private TextView tvEvaContet1;
     private SimpleDraweeView sdvAvatar2;
     private TextView tvUserName2;
     private LinearLayout llStarEvaluate2;
-    private TextView tvScore2;
+   // private TextView tvScore2;
     private TextView tvEvaContet2;
     private ScrollView scrollView;
     private RelativeLayout rl_tel;
     private TextView tv_look;
+    private LinearLayout li_look;
     private RelativeLayout rl_wai;
 
     private String shopID;
@@ -81,7 +84,7 @@ public class ShopDetailActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fooddetail);
+        setContentView(R.layout.tuangou_shop_detail_activity);
         getIntentData();
         initView();
         initNetData();
@@ -117,19 +120,29 @@ public class ShopDetailActivity extends BaseActivity {
         } else {
             ratbarShop.setRating(Integer.parseInt(shop.getBaoshop().getScore()));
         }
-        tvContentAverage.setText(("¥" + shop.getBaoshop().getPrice() + "/人"));
-        tvGrade.setText(shop.getBaoshop().getScore());
+      //  tvContentAverage.setText(("¥" + shop.getBaoshop().getPrice() + "/人"));
+       // tvGrade.setText(shop.getBaoshop().getScore());
         tvShopAddr.setText(shop.getBaoshop().getAddr());
-        tvTel.setText(shop.getBaoshop().getTel());
+        //tvTel.setText(shop.getBaoshop().getTel());
+        sj_tell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                Uri data = Uri.parse("tel:" + shop.getBaoshop().getTel());
+                intent.setData(data);
+                startActivity(intent);
+            }
+        });
 //        tvHadBuy.setText(shop.getBaoshop().);
 
-        if (TextUtils.isEmpty(shop.getYouHui().getMinAmount()) || TextUtils.isEmpty(shop.getYouHui().getAmount())) {
-            tvFavorable1.setVisibility(View.GONE);
-        }
-        tvFavorable2.setVisibility(View.GONE);
-        tvFavorable1.setText("满" + shop.getYouHui().getMinAmount() + "减" + shop.getYouHui().getAmount());
+//        if (TextUtils.isEmpty(shop.getYouHui().getMinAmount()) || TextUtils.isEmpty(shop.getYouHui().getAmount())) {
+//            tvFavorable1.setVisibility(View.GONE);
+//        }
+//        tvFavorable2.setVisibility(View.GONE);
+//        tvFavorable1.setText("满" + shop.getYouHui().getMinAmount() + "减" + shop.getYouHui().getAmount());
         tvEvaluate.setText("评价(" + shop.getBaoshop().getNum() + ")");
-
+//        tvFavorable1.setVisibility(View.GONE);
+//        tvFavorable2.setVisibility(View.GONE);
         Log.e("SHOPDATY", "updateView: " + shop.getDianping());
         if (shop.getDianping().size() == 0 || shop.getDianping() == null) {
             rlDianping1.setVisibility(View.GONE);
@@ -142,14 +155,18 @@ public class ShopDetailActivity extends BaseActivity {
             rlDianping2.setVisibility(View.VISIBLE);
             tvEvaContet1.setVisibility(View.VISIBLE);
             tvEvaContet2.setVisibility(View.VISIBLE);
+
             rl_nodp.setVisibility(View.GONE);
         }
         if (shop.getDianping().size() != 0 && shop.getDianping().size() == 1) {
             DianPing dianping = shop.getDianping().get(0);
+            System.out.println("tvUserName1:"+tvUserName1);
+            System.out.println("dianping:"+dianping.getNickname());
             sdvAvatar1.setImageURI(Constant.PHOTOBASEURL + dianping.getFace());
             tvUserName1.setText(dianping.getNickname());
             tvEvaContet1.setText(dianping.getContents());
-            tvScore1.setText(dianping.getScore());
+            llStarEvaluate2.setVisibility(View.GONE);
+            //tvScore1.setText(dianping.getScore());
             rlDianping1.setVisibility(View.VISIBLE);
             rlDianping2.setVisibility(View.GONE);
             tvEvaContet1.setVisibility(View.VISIBLE);
@@ -163,7 +180,7 @@ public class ShopDetailActivity extends BaseActivity {
             sdvAvatar2.setImageURI(Constant.PHOTOBASEURL + dianping.getFace());
             tvUserName2.setText(dianping.getNickname());
             tvEvaContet2.setText(dianping.getContents());
-            tvScore2.setText(dianping.getScore());
+       //     tvScore2.setText(dianping.getScore());
             rlDianping1.setVisibility(View.VISIBLE);
             rlDianping2.setVisibility(View.VISIBLE);
             tvEvaContet1.setVisibility(View.VISIBLE);
@@ -186,12 +203,10 @@ public class ShopDetailActivity extends BaseActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                     Intent intent = new Intent();
-                    intent.setClass(ShopDetailActivity.this, TuanGouActivity.class);
+                    intent.setClass(ShopDetailActivity.this, TuanGouDetailActivity.class);
                     intent.putExtra("shopId", shopID);
                     intent.putExtra("tuanId", shop.getBaoTuan().get(position).getTuanId());
                     startActivity(intent);
-
-
                 }
             });
         }
@@ -255,16 +270,17 @@ public class ShopDetailActivity extends BaseActivity {
         rl_wai = (RelativeLayout) findViewById(R.id.rl_wai);
         sdvHeaderAD = (SimpleDraweeView) findViewById(R.id.sdv_head_ad);
         tvFoodShopName = (TextView) findViewById(R.id.tv_foodShopName);
-        llStar = (LinearLayout) findViewById(R.id.ll_star);
+        //llStar = (LinearLayout) findViewById(R.id.ll_star);
         ratbarShop = (RatingBar) findViewById(R.id.ratbarShop);
-        tvContentAverage = (TextView) findViewById(R.id.tv_content_average);
+      //  tvContentAverage = (TextView) findViewById(R.id.tv_content_average);
         tvShopAddr = (TextView) findViewById(R.id.tv_shop_addr);
-        rlTel = (RelativeLayout) findViewById(R.id.rl_tel);
-        tvTel = (TextView) findViewById(R.id.tv_tel);
-        rlWaimai = (RelativeLayout) findViewById(R.id.rl_waimai);
-        tvHadBuy = (TextView) findViewById(R.id.tv_hadBuy);
-        tvFavorable1 = (TextView) findViewById(R.id.tv_favorable1);
-        tvFavorable2 = (TextView) findViewById(R.id.tv_favorable2);
+//        rlTel = (RelativeLayout) findViewById(R.id.rl_tel);
+//        tvTel = (TextView) findViewById(R.id.tv_tel);
+        sj_tell = (TextView) findViewById(R.id.sj_tell);
+        //rlWaimai = (RelativeLayout) findViewById(R.id.rl_waimai);
+       // tvHadBuy = (TextView) findViewById(R.id.tv_hadBuy);
+//        tvFavorable1 = (TextView) findViewById(R.id.tv_favorable1);
+//        tvFavorable2 = (TextView) findViewById(R.id.tv_favorable2);
         lvCombo = (ListView) findViewById(R.id.lv_group);
         rlDianping1 = (RelativeLayout) findViewById(R.id.rl_dianping1);
         rlDianping2 = (RelativeLayout) findViewById(R.id.rl_dianping2);
@@ -272,28 +288,38 @@ public class ShopDetailActivity extends BaseActivity {
         tvEvaluate = (TextView) findViewById(R.id.tv_evaluate);
         rlLookEvaluate = (RelativeLayout) findViewById(R.id.rl_look_evaluate);
         sdvAvatar1 = (SimpleDraweeView) findViewById(R.id.sdv_avatar);
-        tvUserName1 = (TextView) findViewById(R.id.tv_username);
-        llStarEvaluate1 = (LinearLayout) findViewById(R.id.ll_stars);
-        tvScore1 = (TextView) findViewById(R.id.tv_score);
+        tvUserName1 = (TextView) findViewById(R.id.tv_userName1);
+        back= (TextView) findViewById(R.id.back);
+     //   llStarEvaluate1 = (LinearLayout) findViewById(R.id.ll_stars);
+        //tvScore1 = (TextView) findViewById(R.id.tv_score);
         tvEvaContet1 = (TextView) findViewById(R.id.tv_evaluate_content);
         sdvAvatar2 = (SimpleDraweeView) findViewById(R.id.sdv_avatar_2);
         tvUserName2 = (TextView) findViewById(R.id.tv_userName2);
         llStarEvaluate2 = (LinearLayout) findViewById(R.id.ll_stars_2);
-        tvScore2 = (TextView) findViewById(R.id.tv_score2);
+     //   tvScore2 = (TextView) findViewById(R.id.tv_score2);
         tvEvaContet2 = (TextView) findViewById(R.id.tv_evaluate_content2);
-        tvGrade = (TextView) findViewById(R.id.tv_grade);
+      //tvGrade = (TextView) findViewById(R.id.tv_grade);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         tv_look = (TextView) findViewById(R.id.tv_look);
-        rlTel.setOnClickListener(new View.OnClickListener() {
+        li_look  = (LinearLayout) findViewById(R.id.li_look);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                Uri data = Uri.parse("tel:" + tvTel.getText());
-                intent.setData(data);
-                startActivity(intent);
+
+                finish();
+
             }
         });
-        tv_look.setOnClickListener(new View.OnClickListener() {
+//        rlTel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                Uri data = Uri.parse("tel:" + tvTel.getText());
+//                intent.setData(data);
+//                startActivity(intent);
+//            }
+//        });
+        li_look.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();

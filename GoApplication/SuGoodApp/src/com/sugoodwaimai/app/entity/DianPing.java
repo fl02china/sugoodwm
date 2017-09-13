@@ -89,6 +89,7 @@ public class DianPing implements Serializable {
 
     public String getNickname() {
         return nickname;
+
     }
 
     public void setNickname(String nickname) {

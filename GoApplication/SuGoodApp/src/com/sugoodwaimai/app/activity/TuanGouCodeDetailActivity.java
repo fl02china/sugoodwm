@@ -64,7 +64,7 @@ public class TuanGouCodeDetailActivity extends BaseActivity {
 
                 intent.putExtra("tuanId", bundle.getString("tuanId"));
                 intent.putExtra("shopId", bundle.getString("shopId"));
-                intent.setClass(getApplicationContext(), TuanGouActivity.class);
+                intent.setClass(getApplicationContext(), TuanGouDetailActivity.class);
                 startActivity(intent);
 
             }
@@ -77,7 +77,7 @@ public class TuanGouCodeDetailActivity extends BaseActivity {
         Intent intent = new Intent();
         intent.putExtra("tuanId", bundle.getString("tuanId"));
         intent.putExtra("shopId", bundle.getString("shopId"));
-        intent.setClass(TuanGouCodeDetailActivity.this, TuanGouActivity.class);
+        intent.setClass(TuanGouCodeDetailActivity.this, TuanGouDetailActivity.class);
         startActivity(intent);
     }
 

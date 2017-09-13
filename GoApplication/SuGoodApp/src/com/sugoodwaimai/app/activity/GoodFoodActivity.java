@@ -129,7 +129,7 @@ public class GoodFoodActivity extends BaseActivity implements View.OnClickListen
             else    if (adEntityList.get(0).getType().equals("1")) {
                     intent.putExtra("tuanId", adEntityList.get(0).getDiyid());
                     intent.putExtra("shopId", "");
-                    intent.setClass(GoodFoodActivity.this, TuanGouActivity.class);
+                    intent.setClass(GoodFoodActivity.this, TuanGouDetailActivity.class);
                     startActivity(intent);
                 } else if (adEntityList.get(0).getType().equals("2")) {
                     intent.putExtra("shopId", adEntityList.get(0).getDiyid());

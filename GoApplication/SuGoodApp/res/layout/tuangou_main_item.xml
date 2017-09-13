@@ -71,53 +71,29 @@
 
         />
 
-    <TextView
-        android:id="@+id/takeaway_shop_sold_num"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:layout_marginLeft="16dp"
-        android:text="3333"
-        android:textColor="@color/text_black"
-
-
-        android:layout_alignTop="@+id/takeaway_shop_rating"
-        android:layout_toRightOf="@+id/takeaway_shop_rating"
-        android:layout_toEndOf="@+id/takeaway_shop_rating"
-        android:layout_marginStart="16dp" />
 
     <TextView
-        android:id="@+id/takeaway_shop_start_delivery_price"
+        android:id="@+id/junjia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/takeaway_shop_name"
         android:layout_below="@id/takeaway_shop_rating"
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/takeaway_shop_img"
-
+        android:text="333333333"
         android:textColor="@color/text_black" />
 
-    <View
-        android:id="@+id/takeaway_shop_line1"
-        android:layout_width="1dp"
-        android:layout_height="8dp"
-        android:layout_alignBottom="@+id/takeaway_shop_start_delivery_price"
-        android:layout_below="@+id/takeaway_shop_rating"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/takeaway_shop_start_delivery_price"
-        android:background="#E4E4E4" />
+
 
     <TextView
-        android:id="@+id/takeaway_shop_delivery_price"
+        android:id="@+id/takeaway_shop_sold_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/takeaway_shop_start_delivery_price"
+        android:layout_alignBottom="@+id/junjia"
         android:layout_below="@+id/takeaway_shop_rating"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/takeaway_shop_line1"
+        android:layout_toRightOf="@+id/junjia"
 
         android:textColor="@color/text_black"
 
@@ -132,54 +108,14 @@
         android:layout_toRightOf="@+id/takeaway_shop_img"
         android:background="#E4E4E4" />
 
-    <LinearLayout
-        android:id="@+id/takeaway_coupon_ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_alignLeft="@+id/takeaway_shop_line2"
-        android:layout_below="@+id/takeaway_shop_line2"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/takeaway_favorable1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="打折"
-            android:drawablePadding="5dp"
-
-            android:drawableLeft="@drawable/tv_favorable_bg1"
-            android:textColor="@color/text_black"
-            android:textSize="12sp" />
-        <TextView
-            android:id="@+id/takeaway_favorable3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="新客户立减10元"
-
-            android:drawablePadding="5dp"
-            android:drawableLeft="@drawable/tv_favorable_bg3"
-            android:textColor="@color/text_black"
-            android:textSize="12sp" />
-        <TextView
-            android:id="@+id/takeaway_favorable2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="满100减10"
-            android:drawableLeft="@drawable/tv_favorable_bg2"
-            android:drawablePadding="5dp"
-            android:textColor="@color/text_black"
-            android:textSize="12sp" />
 
 
-    </LinearLayout>
 
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="12dp"
-        android:layout_below="@+id/takeaway_coupon_ll"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
-        android:background="#F6F6F6" />
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="12dp"-->
+        <!--android:layout_below="@+id/takeaway_shop_line2"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!---->
+        <!--android:background="#F6F6F6" />-->
 </RelativeLayout>

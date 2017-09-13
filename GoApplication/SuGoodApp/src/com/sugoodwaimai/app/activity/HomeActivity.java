@@ -485,7 +485,7 @@ public class HomeActivity extends BaseActivity implements TextView.OnEditorActio
         if (EntityList.get(position).getType().equals("1")) {
             intent.putExtra("tuanId", EntityList.get(position).getDiyid());
             intent.putExtra("shopId", "");
-            intent.setClass(HomeActivity.this, TuanGouActivity.class);
+            intent.setClass(HomeActivity.this, TuanGouDetailActivity.class);
             startActivity(intent);
         } else if (EntityList.get(position).getType().equals("2")) {
             intent.putExtra("shopId", EntityList.get(position).getDiyid());
@@ -834,10 +834,7 @@ public class HomeActivity extends BaseActivity implements TextView.OnEditorActio
             ImageView iv = new ImageView(mContext);
 
             imageUrl.add(Constant.PHOTOBASEURL + adEntityList.get(i).getPhoto());
-            //  GlideUtil.displayImage(Constant.PHOTOBASEURL + adEntityList.get(i).getPhoto(), iv);
-//            Glide.with(iv.getContext()).load(Constant.PHOTOBASEURL + adEntityList.get(i).getPhoto()).error(R.drawable.defasd_111).into(iv);
-//            iv.setScaleType(ImageView.ScaleType.FIT_XY);
-//            imageList.add(iv);
+
         }
 
         Banner banner = (Banner) headerView.findViewById(R.id.banner);
@@ -850,38 +847,6 @@ public class HomeActivity extends BaseActivity implements TextView.OnEditorActio
         //banner设置方法全部调用完毕时最后调用
         banner.start();
 
-
-//        vp_home = (ViewPager) findViewById(R.id.vp_home);
-//        ImageAdapter pagerAdapter = new ImageAdapter(mContext, imageList, adEntityList);
-//        vp_home.setAdapter(pagerAdapter);
-//
-//        // 设置自动轮播图片，5s后执行，周期是5s
-//        Timer timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                Message message = new Message();
-//                message.what = 0;
-//                if (autoCurrIndex == adEntityList.size() - 1) {
-//                    autoCurrIndex = -1;
-//                }
-//                message.arg1 = autoCurrIndex + 1;
-//                mHandler.sendMessage(message);
-//            }
-//        }, 5000, 5000);
-//
-//        mScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-//        mScheduledExecutorService.scheduleAtFixedRate(new Runnable() {
-//            @Override
-//            public void run() {
-//                synchronized (vp_home) {
-//                    if (!mChangeListener.nowAction) {
-//                        mChangeListener.mCurrentItem++;
-//                        mHandler.obtainMessage().sendToTarget();
-//                    }
-//                }
-//            }
-//        }, 0, 5, TimeUnit.SECONDS);
     }
 
     @Override
@@ -893,7 +858,7 @@ public class HomeActivity extends BaseActivity implements TextView.OnEditorActio
         if (adEntityList.get(position).getType().equals("1")) {
             intent.putExtra("tuanId", adEntityList.get(position).getDiyid());
             intent.putExtra("shopId", "");
-            intent.setClass(HomeActivity.this, TuanGouActivity.class);
+            intent.setClass(HomeActivity.this, TuanGouDetailActivity.class);
         } else if (adEntityList.get(position).getType().equals("2")) {
             intent.putExtra("shopId", adEntityList.get(position).getDiyid());
             intent.setClass(HomeActivity.this, ShopDetailActivity.class);
@@ -939,7 +904,7 @@ public class HomeActivity extends BaseActivity implements TextView.OnEditorActio
 //                    if (adEntityList.get(position).getType().equals("1")) {
 //                        intent.putExtra("tuanId", adEntityList.get(position).getDiyid());
 //                        intent.putExtra("shopId", "");
-//                        intent.setClass(HomeActivity.this, TuanGouActivity.class);
+//                        intent.setClass(HomeActivity.this, TuanGouDetailActivity.class);
 //                    } else if (adEntityList.get(position).getType().equals("2")) {
 //                        intent.putExtra("shopId", adEntityList.get(position).getDiyid());
 //                        intent.setClass(HomeActivity.this, ShopDetailActivity.class);

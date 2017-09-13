@@ -142,7 +142,7 @@ public class TakeawayOrderFoodAdapter extends RecyclerView.Adapter<TakeawayOrder
             }
         });
         //getItemView()
-        holder. getItemView().setOnClickListener(new View.OnClickListener() {
+        holder. mImageView .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

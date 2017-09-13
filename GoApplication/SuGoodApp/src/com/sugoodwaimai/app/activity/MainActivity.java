@@ -106,12 +106,13 @@ public class MainActivity extends TabActivity {
         mineTab = tabhost.newTabSpec("mine");
 
         homeTab.setIndicator(createContent("外卖", R.drawable.main_home_tab));
-        nearbyTab.setIndicator(createContent("附近", R.drawable.main_nearby_tab));
+        nearbyTab.setIndicator(createContent("团购", R.drawable.main_nearby_tab));
         //servicedemandTab.setIndicator(createContent("订单", R.drawable.main_service_demand_tab));
         mineTab.setIndicator(createContent("我的", R.drawable.main_mine_tab));
 
         // 绑定显示的页面
         homeTab.setContent(new Intent(this, TakeawayMainActivity.class));
+        //nearbyTab.setContent(new Intent(this,NearbyActivity .class));
         nearbyTab.setContent(new Intent(this,NearbyActivity .class));
       //  servicedemandTab.setContent(new Intent(this, ServiceDemandActivity.class));
         //servicedemandTab.setContent(new Intent(this, OrderManagerActivity.class));

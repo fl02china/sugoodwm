@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.sugoodwaimai.app.activity.ShopDetailActivity;
 import com.sugoodwaimai.app.activity.TakeawayMarketDetailActivity;
 import com.sugoodwaimai.app.activity.TakeawayShopDetailActivity;
-import com.sugoodwaimai.app.activity.TuanGouActivity;
+import com.sugoodwaimai.app.activity.TuanGouDetailActivity;
 import com.sugoodwaimai.app.entity.AdEntity;
 import com.sugoodwaimai.app.util.ToastUtil;
 
@@ -74,7 +74,7 @@ public class MarketPagerAdapter extends PagerAdapter {
                     if (adEntityList.get(position).getType().equals("1")) {
                         intent.putExtra("tuanId", adEntityList.get(position).getDiyid());
                         intent.putExtra("shopId", "");
-                        intent.setClass(mContext, TuanGouActivity.class);
+                        intent.setClass(mContext, TuanGouDetailActivity.class);
                         mContext.startActivity(intent);
                     } else if (adEntityList.get(position).getType().equals("2")) {
                         intent.putExtra("shopId", adEntityList.get(position).getDiyid());

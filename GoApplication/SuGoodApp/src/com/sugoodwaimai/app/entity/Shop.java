@@ -13,7 +13,7 @@ public class Shop implements Serializable {
 
     private static final long serialVersionUID = -5052305860059285652L;
 
-    private YouHui YouHui;
+    //private YouHui YouHui;
 
     private List<TuanGou> BaoTuan;
 
@@ -21,13 +21,13 @@ public class Shop implements Serializable {
 
     private List<DianPing> dianping;
 
-    public com.sugoodwaimai.app.entity.YouHui getYouHui() {
-        return YouHui;
-    }
-
-    public void setYouHui(com.sugoodwaimai.app.entity.YouHui youHui) {
-        YouHui = youHui;
-    }
+//    public com.sugoodwaimai.app.entity.YouHui getYouHui() {
+//        return YouHui;
+//    }
+//
+//    public void setYouHui(com.sugoodwaimai.app.entity.YouHui youHui) {
+//        YouHui = youHui;
+//    }
 
     public List<TuanGou> getBaoTuan() {
         return BaoTuan;
@@ -56,7 +56,7 @@ public class Shop implements Serializable {
     @Override
     public String toString() {
         return "Shop{" +
-                "YouHui=" + YouHui +
+              //  "YouHui=" + YouHui +
                 ", BaoTuan=" + BaoTuan +
                 ", baoshop=" + baoshop +
                 ", dianping=" + dianping +

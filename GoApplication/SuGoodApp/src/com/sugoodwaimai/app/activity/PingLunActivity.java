@@ -66,6 +66,7 @@ public class PingLunActivity extends BaseActivity {
         params.put("shopId", getIntent().getStringExtra("shopId"));
         params.put("page", "1");
         params.put("pageSize", "100");
+        Log.e("shopId", "shopId: " + getIntent().getStringExtra("shopId"));
         HttpUtil.post(Constant.SHOPPINLUN_URL, params, new JsonHttpResponseHandler() {
 
             @Override

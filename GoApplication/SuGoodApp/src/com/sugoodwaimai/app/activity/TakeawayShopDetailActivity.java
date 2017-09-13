@@ -217,7 +217,8 @@ public class TakeawayShopDetailActivity extends AppCompatActivity {
         mView = findViewById(R.id.takeaway_shopcar_view1);
         mTab = (TabLayout) findViewById(R.id.takeaway_shop_tabs);
         mBlurLayout = (RelativeLayout) findViewById(R.id.takeaway_shop_description_rl);
-        isFarvorite();
+        if (SugoodApplication.isLogin){
+            isFarvorite();}
         mFarvorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -239,6 +240,7 @@ public class TakeawayShopDetailActivity extends AppCompatActivity {
      */
     private void isFarvorite() {
         RequestParams params = new RequestParams();
+
         params.put("userId", SugoodApplication.user.getUserId());
         params.put("shopId", getIntent().getStringExtra("shopId"));
 

@@ -23,18 +23,23 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.baidu.location.BDLocation;
-//import com.baidu.location.BDLocationListener;
+
+
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.sugoodwaimai.app.R;
 import com.sugoodwaimai.app.adapter.TakeawayMainAdapter;
+import com.sugoodwaimai.app.adapter.TuanGouMainAdapter;
 import com.sugoodwaimai.app.application.SugoodApplication;
 import com.sugoodwaimai.app.entity.TakeawayShop;
+import com.sugoodwaimai.app.entity.TuanGouShop;
 import com.sugoodwaimai.app.global.Constant;
 import com.sugoodwaimai.app.util.HttpUtil;
 import com.sugoodwaimai.app.util.JsonUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,8 +80,9 @@ public class NearbyActivity extends BaseActivity {
     boolean isLoadMore;
     List<Fragment> mList;
     List<ImageView> mDotList;
-    List<TakeawayShop> mShopList;
-    TakeawayMainAdapter rvAdapter;
+  //List<TakeawayShop> mShopList;
+    List<TuanGouShop> mShopList;
+    TuanGouMainAdapter rvAdapter;
     private boolean isToast = false;
     private long exitTime = 0;
 
@@ -99,7 +105,7 @@ public class NearbyActivity extends BaseActivity {
                     params.put("pageSize", "15");
                     params.put("lat", SugoodApplication.lat);
                     params.put("lng", SugoodApplication.lng);
-                    HttpUtil.post(Constant.TAKEAWAY_MAIN_LIST_URL, params, new AsyncHttpResponseHandler() {
+                    HttpUtil.post(Constant.GOODFOOD, params, new AsyncHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                             if (statusCode == 200) {
@@ -112,7 +118,7 @@ public class NearbyActivity extends BaseActivity {
 
                                         mShopList.clear();
 
-                                        mShopList.addAll(JsonUtil.toList(result, TakeawayShop.class));
+                                        mShopList.addAll(JsonUtil.toList(result, TuanGouShop.class));
                                         rvAdapter.notifyDataSetChanged();
                                         closeKeyBoard();
 //                                        mRecyclerView.smoothScrollBy(0, headerView.getMeasuredHeight());
@@ -173,46 +179,59 @@ public class NearbyActivity extends BaseActivity {
 //    }
 
 
-    private void requestRvData(int page, int waicate, int xiaoPing, final boolean isLoadMore) {
+    private void requestRvData(int page, int waicate, int typeQuery, final boolean isLoadMore) {
         RequestParams params = new RequestParams();
-        if (waicate != 0) {
-            params.put("WaiCate", String.valueOf(waicate));
-        }
-        if (xiaoPing == TopRemarkNum) {
-            params.put("xiaoPing", 0);
-        } else if (xiaoPing == TopSoldNum) {
-            params.put("xiaoPing", 1);
+        System.out.println("111typeQuery:"+typeQuery);
+        if (typeQuery == 1) {
+            params.put("typeQuery", 1);
+        } else if (typeQuery == 2) {
+            params.put("typeQuery", 2);
+        }else if (typeQuery == 3){
+            params.put("typeQuery", 3);
         }
         params.put("page", String.valueOf(page));
         params.put("pageSize", "15");
         params.put("lat", SugoodApplication.lat);
         params.put("lng", SugoodApplication.lng);
-        HttpUtil.post(Constant.TAKEAWAY_MAIN_LIST_URL, params, new AsyncHttpResponseHandler() {
+        System.out.println("111params:"+params.toString());
+        HttpUtil.post(Constant.GOODFOOD, params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if (statusCode == 200) {
-                    Log.i(TAG, "onSuccess: " + new String(responseBody));
+                    Log.i(TAG, "onSuccessgg: " + new String(responseBody));
 
-                    final String result = new String(responseBody);
-                    new Handler().post(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (!isLoadMore) {
-                                mShopList.clear();
+                      String result = new String(responseBody);
+                    try {
+                        final JSONObject myJsonObject = new JSONObject( result);
+                     final String List =  myJsonObject.getString("List") ;
+                        new Handler().post(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (!isLoadMore) {
+                                    mShopList.clear();
+                                }
+                                mShopList.addAll(JsonUtil.toList( List, TuanGouShop.class));
+                                rvAdapter.notifyDataSetChanged();
                             }
-                            mShopList.addAll(JsonUtil.toList(result, TakeawayShop.class));
-                            rvAdapter.notifyDataSetChanged();
-                        }
-                    });
+                        });
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
                 }
             }
 
+
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, final Throwable error) {
+            public void onFailure(int statusCode, Header[] headers, final byte[] responseBody, final Throwable error) {
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(mContext, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                        System.out.println("error:"+error.getMessage());
+                        System.out.println("responseBody:"+responseBody);
+                        // String result = new String(responseBody);
+                       // Toast.makeText(mContext, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -224,12 +243,12 @@ public class NearbyActivity extends BaseActivity {
     private void initData() {
 
 
-        View headerView = LayoutInflater.from(mContext).inflate(R.layout.include_takeaway_main, null);
+        View headerView = LayoutInflater.from(mContext).inflate(R.layout.include_tuangou_head, null);
         initRVHeaderView(headerView);
         mRecyclerView.addHeaderView(headerView);
         mShopList = new ArrayList<>();
 
-        rvAdapter = new TakeawayMainAdapter(mContext, mShopList);
+        rvAdapter = new TuanGouMainAdapter(mContext, mShopList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setNestedScrollingEnabled(false);
@@ -238,7 +257,7 @@ public class NearbyActivity extends BaseActivity {
             @Override
             public void onRefresh() {
                 mRecyclerView.setNestedScrollingEnabled(true);
-                onRvRefresh(0, normalState);
+                onRvRefresh(0, 1);
             }
 
             @Override
@@ -276,6 +295,8 @@ public class NearbyActivity extends BaseActivity {
 
     private void initRVHeaderView(final View headerView) {
 
+        final TextView title = (TextView) headerView.findViewById(R.id.takeaway_nearby_shop);
+        title.setText("附近美食团购");
         final RelativeLayout mAllTypeLayout = (RelativeLayout) headerView.findViewById(R.id.takeaway_all_shops_rl);
         final RelativeLayout mMostSoldLayout = (RelativeLayout) headerView.findViewById(R.id.takeaway_most_sold_shops_rl);
         final RelativeLayout mBestCommentLayout = (RelativeLayout) headerView.findViewById(R.id.takeaway_best_comment_shops_rl);
@@ -357,7 +378,7 @@ public class NearbyActivity extends BaseActivity {
         mBestCommentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onRvRefresh(0, 0);
+                onRvRefresh(0, 3);
 //                View view = LayoutInflater.from(mContext).inflate(R.layout.takeaway_comment_view, null);
 //                final PopupWindow window = getPopupWindow(mContext, view, mBestCommentLayout);
 //                final LinearLayout viewLayout = (LinearLayout) view.findViewById(R.id.takeaway_comment_view_ll);

@@ -153,8 +153,8 @@ public class TakeawayMainActivity extends BaseActivity {
         takeaway_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-              //  ToastUtil.setToast(TakeawayMainActivity.this, "百度地图已经删除");
+               //s startLocation();
+           //   ToastUtil.setToast(TakeawayMainActivity.this, "高德定位刷新");
 
             }
         });
@@ -207,7 +207,11 @@ public class TakeawayMainActivity extends BaseActivity {
                         locationCity = locationCity.replaceAll("[^\u4E00-\u9FA5]", "");
 
                     }
-                    initNetData(location.getLatitude() + "", location.getLongitude() + "", locationCity);
+                    //      params.put("lat", "20.919973");
+//      params.put("lng", "110.084040");
+                    System.out.println("aaaaa111aaaa写死");
+                    initNetData(  "20.919973",   "110.084040", locationCity);
+                 //   initNetData(location.getLatitude() + "", location.getLongitude() + "", locationCity);
                  //   tvLocalCity.setText(locationCity);
                 } else {
                     //定位失败
@@ -322,7 +326,7 @@ public class TakeawayMainActivity extends BaseActivity {
         RequestParams params = new RequestParams();
         params.put("lat", lat);
         params.put("lng", lng);
-//               params.put("lat", "20.919973");
+//      params.put("lat", "20.919973");
 //      params.put("lng", "110.084040");
         params.put("cityName", cityName);
 
@@ -822,7 +826,7 @@ public class TakeawayMainActivity extends BaseActivity {
         if (EntityList.get(position).getType().equals("1")) {
             intent.putExtra("tuanId", EntityList.get(position).getDiyid());
             intent.putExtra("shopId", "");
-            intent.setClass(TakeawayMainActivity.this, TuanGouActivity.class);
+            intent.setClass(TakeawayMainActivity.this, TuanGouDetailActivity.class);
             startActivity(intent);
         } else if (EntityList.get(position).getType().equals("2")) {
             intent.putExtra("shopId", EntityList.get(position).getDiyid());
@@ -914,7 +918,7 @@ public class TakeawayMainActivity extends BaseActivity {
                         intent.putExtra("tuanId", adEntityList.get(position).getDiyid());
                         intent.putExtra("shopId", "");
                         startActivity(intent);
-                        intent.setClass(TakeawayMainActivity.this, TuanGouActivity.class);
+                        intent.setClass(TakeawayMainActivity.this, TuanGouDetailActivity.class);
                     } else if (adEntityList.get(position).getType().equals("2")) {
                         intent.putExtra("shopId", adEntityList.get(position).getDiyid());
                         intent.setClass(TakeawayMainActivity.this, ShopDetailActivity.class);

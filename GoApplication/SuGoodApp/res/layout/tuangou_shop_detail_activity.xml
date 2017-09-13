@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:drawableLeft="@drawable/back_img" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="商家详情"
+
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/farvorite_false2" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_head_ad"
+                android:layout_width="match_parent"
+                android:layout_height="155dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/li_line1"
+                    android:orientation="vertical"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_foodShopName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxEms="14"
+                            android:singleLine="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="富隆广场原野寿司"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+
+                        <RatingBar
+                            android:id="@+id/ratbarShop"
+                            style="@style/RadingStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:isIndicator="false"
+                            android:numStars="5" />
+
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/tv_content_average"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:text="5000+人消费 "-->
+                        <!--android:textColor="@color/black3"-->
+                        <!--android:textSize="@dimen/text_middle" />-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/dangqianweizhi" />
+
+                        <TextView
+                            android:id="@+id/tv_shop_addr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:maxEms="14"
+                            android:singleLine="true"
+                            android:text="雷州市原野寿司富隆广场店"
+                            android:textSize="@dimen/text_middle" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/sj_tell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                    android:background="@drawable/tuan_sj"
+
+                    />
+
+            </RelativeLayout>
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:background="@color/black1" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_tel"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:layout_marginTop="5dp">-->
+
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/tv"-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="20dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:src="@drawable/call" />-->
+
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_tel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_toRightOf="@+id/tv"-->
+                    <!--android:text="135432506350" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:src="@drawable/ic_arrow_right_gray" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="11dp"-->
+            <!--android:background="#ededed" />-->
+
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/rl_waimai"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:visibility="gone">-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_waimai"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/defasd_111" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_toRightOf="@+id/iv_waimai"-->
+            <!--android:text="外卖"-->
+            <!--android:textColor="@color/black1"-->
+            <!--android:textSize="16sp" />-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:src="@drawable/ic_arrow_right_gray" />-->
+
+            <!--</RelativeLayout>-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:background="#ededed" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_wai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/iv_payBill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="18dp"
+
+                    android:src="@drawable/maidan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"
+
+                    android:layout_toRightOf="@+id/iv_payBill"
+                    android:text="不想出门？点个外卖吧"
+                    android:textSize="@dimen/text_normal" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="13dp"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_arrow_right_gray" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:background="#ededed" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_favorable1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="35dp"-->
+            <!--android:text="每满100减18元（每天00:00～24：00）"-->
+            <!--android:textSize="@dimen/text_middle"-->
+            <!--android:visibility="gone" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_favorable2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="35dp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:text="每满100减18元（每天00:00～24：00）"-->
+            <!--android:textSize="@dimen/text_middle"-->
+            <!--android:visibility="gone" />-->
+
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:background="@color/black1" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/tuan01"
+                android:drawableRight="@drawable/tuan02"
+                android:drawablePadding="7dp"
+                android:layout_gravity="center_horizontal"
+                android:text="团购套餐"
+                android:textSize="@dimen/text_normal" />
+
+            <com.sugoodwaimai.app.view.SuGoodListView
+                android:id="@+id/lv_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"></com.sugoodwaimai.app.view.SuGoodListView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="11dp"
+                android:background="#ededed" />
+
+            <RelativeLayout
+                android:id="@+id/rl_look_evaluate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_evaluate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="评价（657）"
+                    android:textSize="@dimen/text_normal" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_dianping1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_avatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/black1"
+                    fresco:roundAsCircle="true" />
+
+                <LinearLayout
+                    android:id="@+id/ll_stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_toRightOf="@+id/sdv_avatar"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_userName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="唐老板" />
+
+                    <RatingBar
+                        android:id="@+id/ratbarShop1"
+                        style="@style/RadingStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:isIndicator="false"
+                        android:numStars="3" />
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/createTime1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:text="2017/09/20" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_evaluate_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="腾讯体育3月1日讯 《雅虎体育》王牌记者阿德里安-沃纳洛夫斯基报道，只关闭该选项卡，并重新打开它从项目导航窗格。它将正确加载。它会节省你很多时间。"
+                android:textSize="12sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_dianping2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_avatar_2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/black1"
+                    fresco:roundAsCircle="true" />
+
+                <LinearLayout
+                    android:id="@+id/ll_stars_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_toRightOf="@+id/sdv_avatar_2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_userName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="唐老板" />
+
+                    <RatingBar
+                        android:id="@+id/ratbarShop2"
+                        style="@style/RadingStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:isIndicator="false"
+                        android:numStars="3" />
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/createTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp"
+                    android:text="2017/09/20" />
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_evaluate_content2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="腾讯体育3月1日讯 《雅虎体育》王牌记者阿德里安-沃纳洛夫斯基报道，只关闭该选项卡，并重新打开它从项目导航窗格。它将正确加载。它会节省你很多时间。"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/li_look"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_look"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+
+                    android:text="全部用户评价" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_evaluate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="1dp"
+                    android:drawableRight="@drawable/ic_arrow_right_gray"
+                    android:text="共109条" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_nodp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="暂无评价" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="更多信息"
+                android:textSize="@dimen/text_normal"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
