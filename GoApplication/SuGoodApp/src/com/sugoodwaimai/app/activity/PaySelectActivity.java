@@ -126,7 +126,7 @@ public class PaySelectActivity extends BaseActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        type = bundle.getString("type");
+        type = bundle.getString("type");//2是团购
         price=bundle.getString("price");
         orderDetails=bundle.getString("orderDetails");
 
@@ -412,9 +412,16 @@ public class PaySelectActivity extends BaseActivity {
                     }else{
                         Intent intent = new Intent();
                         intent.putExtra("type", paytype);
+                        System.out.println("1111outTradeNo"+type);
                         intent.putExtra("outTradeNo", outTradeNo);
+
+                        intent.putExtra("orderId", orderId);
                         intent.putExtra("price", price.toString());
+                        if (type.equals("2")){
+                            intent.setClass(PaySelectActivity.this, PayresultTuanActivity.class);
+                        }else{
                         intent.setClass(PaySelectActivity.this, PayresultActivity.class);
+                        }
                         startActivity(intent);
                         finish();
                         // ToastUtil.setToast(PayresultActivity.this, "支付成功了！");

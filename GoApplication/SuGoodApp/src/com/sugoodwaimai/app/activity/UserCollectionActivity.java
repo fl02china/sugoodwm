@@ -57,7 +57,7 @@ public class UserCollectionActivity extends AppCompatActivity {
 
         List<Fragment> list = new ArrayList<Fragment>();
         list.add(new ShopCollectionFragment());
-        list.add(new ProductCollectionFragment2());
+        list.add(new ProductCollectionFragment());
         //list.add(new ProductCollectionFragment());
 
         mViewPager.setAdapter(new CollectionPagerAdapter(getSupportFragmentManager(), list));

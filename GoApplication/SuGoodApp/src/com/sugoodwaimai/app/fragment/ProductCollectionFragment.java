@@ -19,6 +19,10 @@ import com.sugoodwaimai.app.global.Constant;
 import com.sugoodwaimai.app.util.HttpUtil;
 import com.sugoodwaimai.app.util.JsonUtil;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,8 +60,19 @@ public class ProductCollectionFragment extends Fragment {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
                 mList.clear();
-                String response = "["+new String(responseBody)+"]";
-                mList.addAll(JsonUtil.toList(response, Collection.class));
+                String response =  new String(responseBody) ;
+                JSONObject myJsonObject = null;
+                try {
+                    myJsonObject = new JSONObject( response);
+                    response = myJsonObject.getString("list");
+                    System.out.println("myJsonObjectlist:"+response.toString());
+                    mList.addAll(JsonUtil.toList(response, Collection.class));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                //  String List =  myJsonObject.getString("List") ;
+
+
                 adapter.notifyDataSetChanged();
             }
 

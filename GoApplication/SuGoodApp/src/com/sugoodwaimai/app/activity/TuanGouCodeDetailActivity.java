@@ -35,7 +35,7 @@ public class TuanGouCodeDetailActivity extends BaseActivity {
     ImageView imgCode;
     @BindView(R.id.img)
     SimpleDraweeView img;
-    @BindView(R.id.shopname)
+    @BindView(R.id.goodname)
     TextView titlename;
     @BindView(R.id.usetime)
     TextView usetime;

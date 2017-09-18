@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -30,7 +31,7 @@
 
             android:textSize="16sp" />
 
-        <TextView
+        <ImageView
             android:id="@+id/collect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,7 +98,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
-                            android:isIndicator="false"
+
                             android:numStars="5" />
 
 
@@ -232,8 +233,9 @@
             <!--</RelativeLayout>-->
 
             <View
+                android:id="@+id/lined3"
                 android:layout_width="match_parent"
-                android:layout_height="11dp"
+                android:layout_height="15dp"
                 android:background="#ededed" />
 
 
@@ -276,7 +278,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="11dp"
+                android:layout_height="15dp"
                 android:background="#ededed" />
 
             <!--<TextView-->
@@ -310,6 +312,7 @@
                 android:drawableLeft="@drawable/tuan01"
                 android:drawableRight="@drawable/tuan02"
                 android:drawablePadding="7dp"
+                android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal"
                 android:text="团购套餐"
                 android:textSize="@dimen/text_normal" />
@@ -339,20 +342,35 @@
                     android:text="评价（657）"
                     android:textSize="@dimen/text_normal" />
 
-
+                <RatingBar
+                    android:id="@+id/ratbarShop3"
+                    style="@style/RadingStyle"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:numStars="5" />
             </RelativeLayout>
-
+            <View
+                android:id="@+id/lined1"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="#ededed" />
             <RelativeLayout
                 android:id="@+id/rl_dianping1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/sdv_avatar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+
                     android:background="@color/black1"
                     fresco:roundAsCircle="true" />
 
@@ -360,7 +378,7 @@
                     android:id="@+id/ll_stars"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/sdv_avatar"
                     android:orientation="vertical">
 
@@ -378,9 +396,16 @@
                         android:layout_height="wrap_content"
 
 
-                        android:isIndicator="false"
                         android:numStars="3" />
-
+                    <TextView
+                        android:id="@+id/tv_evaluate_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="腾讯体育3月1日讯 《雅虎体育》王牌记者阿德里安-沃纳洛夫斯基报道，只关闭该选项卡，并重新打开它从项目导航窗格。它将正确加载。它会节省你很多时间。"
+                        android:textSize="12sp" />
                 </LinearLayout>
                 <TextView
                     android:id="@+id/createTime1"
@@ -392,21 +417,20 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_evaluate_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="腾讯体育3月1日讯 《雅虎体育》王牌记者阿德里安-沃纳洛夫斯基报道，只关闭该选项卡，并重新打开它从项目导航窗格。它将正确加载。它会节省你很多时间。"
-                android:textSize="12sp" />
 
+            <View
+                android:id="@+id/lined2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:background="#ededed" />
 
             <RelativeLayout
                 android:id="@+id/rl_dianping2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp">
 
 
@@ -423,7 +447,7 @@
                     android:id="@+id/ll_stars_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/sdv_avatar_2"
                     android:orientation="vertical">
 
@@ -441,8 +465,17 @@
                         android:layout_height="wrap_content"
 
 
-                        android:isIndicator="false"
+
                         android:numStars="3" />
+                    <TextView
+                        android:id="@+id/tv_evaluate_content2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="腾讯体育3月1日讯 《雅虎体育》王牌记者阿德里安-沃纳洛夫斯基报道，只关闭该选项卡，并重新打开它从项目导航窗格。它将正确加载。它会节省你很多时间。"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
                 <TextView
@@ -457,20 +490,12 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_evaluate_content2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="腾讯体育3月1日讯 《雅虎体育》王牌记者阿德里安-沃纳洛夫斯基报道，只关闭该选项卡，并重新打开它从项目导航窗格。它将正确加载。它会节省你很多时间。"
-                android:textSize="12sp" />
 
             <LinearLayout
                 android:id="@+id/li_look"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
                 android:orientation="horizontal">
@@ -480,7 +505,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
-
+                    android:layout_marginLeft="15dp"
+                    android:textSize="14sp"
                     android:text="全部用户评价" />
 
                 <TextView
@@ -496,8 +522,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="1dp"
+                    android:textSize="14sp"
                     android:drawableRight="@drawable/ic_arrow_right_gray"
-                    android:text="共109条" />
+                   />
 
             </LinearLayout>
 
@@ -511,24 +538,61 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginBottom="20dp"
+
                     android:layout_marginTop="20dp"
                     android:text="暂无评价" />
 
             </RelativeLayout>
-
             <View
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/black1" />
+                android:layout_marginTop="10dp"
+                android:layout_height="10dp"
 
+                android:background="#ededed" />
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0.5dp"-->
+                <!--android:background="@color/black1" />-->
+        <LinearLayout
+            android:id="@+id/li_sjxinxi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="更多信息"
-                android:textSize="@dimen/text_normal"
-                android:visibility="gone" />
 
+                android:text="店铺信息" />
+            <TextView
+                android:id="@+id/tx_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="7dp"
+                android:drawableLeft="@drawable/tuan_time_icon"
+                android:text="8:30-23:00" />
+            <TextView
+                android:id="@+id/tx_wifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="7dp"
+                android:drawableLeft="@drawable/tuan_wifi_icon"
+                     android:visibility="gone"
+                android:text="提供免费WIFI" />
+
+
+
+
+        </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="10dp"
+
+                android:background="#ededed" />
         </LinearLayout>
 
     </ScrollView>

@@ -21,6 +21,15 @@ public class Tuan implements Serializable {
     private List<String> thumb;
     private String photo;
     private String intro;
+    private String   endDate;
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 
     public String getTitle() {
         return title;

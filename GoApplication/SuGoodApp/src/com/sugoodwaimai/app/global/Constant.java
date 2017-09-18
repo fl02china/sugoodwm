@@ -109,6 +109,8 @@ public class Constant {
     //获取商店团购评论
     public static final String SHOP_TUAN_COMMENT_URL = SUGOODBASEURL + "Speed/MeiShi/baoShop/ShopTuanQuanDianP";
 
+    //查询团购劵二维码
+    public static final String TUAN_CODE_URL = SUGOODBASEURL + "Speed/Tuan/Code";
     //商品收藏
     public static final String PRODUCT_COLLECTION_URL = SUGOODBASEURL + "Speed/My/goodsFavorites";
     //商店收藏
@@ -117,7 +119,9 @@ public class Constant {
     public static final String SUGOODMSG_URL = SUGOODBASEURL + "Speed/baoMsg/queryPage";
     //添加商铺收藏
     public static final String SHOP_COLLECtION_ADD = SUGOODBASEURL + "Speed/baoShopFavorites/add";
-    //添加商铺收藏
+    //查询商品收藏
+    public static final String IS_GOODS_FAVORITES = SUGOODBASEURL + "Speed/Tuan/Favorites";
+    //查询商铺收藏
     public static final String IS_SHOP_COLLECtION = SUGOODBASEURL + "Speed/baoShopFavorites/queryPage";
     //添加商品收藏
     public static final String GOODS_COLLECtION_ADD = SUGOODBASEURL + "Speed/baoGoodsFavorites/add";
@@ -140,6 +144,7 @@ public class Constant {
     public static final String CANCLEORDER = SUGOODBASEURL + "Speed/alipay/cancel";
     // 删除店铺
     public static final String DELETESHOP = SUGOODBASEURL + "Speed/baoShopFavorites/delete";
-
+    // 删除商品
+    public static final String DELETEGOOD = SUGOODBASEURL + "Speed/baoGoodsFavorites/delete";
 
 }

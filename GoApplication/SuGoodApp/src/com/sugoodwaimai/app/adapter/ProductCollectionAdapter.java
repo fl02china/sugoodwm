@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.sugoodwaimai.app.R;
 import com.sugoodwaimai.app.activity.TakeawayMarketDetailActivity;
+import com.sugoodwaimai.app.activity.TuanGouNewDetailActivity;
 import com.sugoodwaimai.app.entity.Collection;
 import com.sugoodwaimai.app.global.Constant;
 import com.sugoodwaimai.app.util.GlideUtil;
@@ -55,9 +56,18 @@ public class ProductCollectionAdapter extends RecyclerView.Adapter<ProductCollec
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, TakeawayMarketDetailActivity.class);
-                intent.putExtra("goodsId",collection.getGoodsId()+"");
-                context.startActivity(intent);
+//                Intent intent=new Intent(context, TakeawayMarketDetailActivity.class);
+//                intent.putExtra("goodsId",collection.getGoodsId()+"");
+//                context.startActivity(intent);
+
+                Intent intent = new Intent();
+                intent.setClass(context, TuanGouNewDetailActivity.class);
+
+                intent.putExtra("shopId", collection.getShopId()+"");
+                intent.putExtra("tuanId", collection.getGoodsId()+"");
+                context. startActivity(intent);
+
+
             }
         });
     }

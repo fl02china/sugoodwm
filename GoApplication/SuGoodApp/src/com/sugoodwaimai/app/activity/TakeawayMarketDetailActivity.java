@@ -181,6 +181,7 @@ public class TakeawayMarketDetailActivity extends AppCompatActivity {
         RequestParams params = new RequestParams();
         params.put("userId", SugoodApplication.user.getUserId());
         params.put("goodsId", goodsId);
+        params.put("type", "1");
         Log.e(TAG, "farvorite: " + getIntent().getStringExtra("shopId"));
         HttpUtil.post(Constant.GOODS_COLLECtION_ADD, params, new AsyncHttpResponseHandler() {
                     @Override

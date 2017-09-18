@@ -66,14 +66,14 @@ public class OrderManagerActivity  extends BaseActivity {
         txTuangou.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (SugoodApplication.isLogin){
-//                Intent intent = new Intent();
-//                //    intent.setClass(MineActivity.this, UserOrderActivity.class);
-//                intent.setClass(OrderManagerActivity.this, OrderTuanGouActivity.class);
-//                startActivity(intent);}else{
-//                    tip("请先登录");
-//                }
-                tip("暂未开放");
+                if (SugoodApplication.isLogin){
+                Intent intent = new Intent();
+                //    intent.setClass(MineActivity.this, UserOrderActivity.class);
+                intent.setClass(OrderManagerActivity.this, OrderTuanGouActivity.class);
+                startActivity(intent);}else{
+                    tip("请先登录");
+                }
+              //  tip("暂未开放");
 
             }
         });

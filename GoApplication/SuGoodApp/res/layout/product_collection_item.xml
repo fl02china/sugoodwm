@@ -17,7 +17,9 @@
               android:layout_height="wrap_content"
               android:layout_alignParentTop="true"
               android:layout_marginTop="10dp"
-
+        android:ellipsize="end"
+        android:maxEms="12"
+        android:singleLine="true"
               android:layout_toRightOf="@+id/product_collection_img"
               android:text="最高价格111.96元刺身拼盘套餐"
               android:textColor="@color/black_de"
@@ -28,7 +30,9 @@
 
               android:layout_height="wrap_content"
               android:layout_below="@+id/product_collection_title"
-
+        android:ellipsize="end"
+        android:maxEms="18"
+        android:singleLine="true"
               android:layout_marginTop="3dp"
               android:layout_toRightOf="@+id/product_collection_img"
               android:text="建议3-4人使用，可免费使用包间"

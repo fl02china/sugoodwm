@@ -177,6 +177,7 @@ public class TuanGouDetailActivity extends BaseActivity implements AdapterView.O
             @Override
             public void onClick(View v) {
                 if (SugoodApplication.isLogin) {
+                    System.out.println("mTuanGoudetail"+mTuanGoudetail);
                     if (mTuanGoudetail != null) {
                         add();
                         Intent intent = new Intent();
@@ -235,6 +236,7 @@ public class TuanGouDetailActivity extends BaseActivity implements AdapterView.O
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
+                Log.e("ss", "onFailure: " + responseString.toString());
             }
 
             @Override

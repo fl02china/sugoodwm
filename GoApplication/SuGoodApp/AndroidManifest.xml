@@ -150,13 +150,15 @@
             android:name="com.sugoodwaimai.app.activity.FunActivity"
             android:launchMode="singleTask" />
 
-
+        <activity android:name="com.sugoodwaimai.app.activity.PayresultTuanActivity" />
+        <activity android:name="com.sugoodwaimai.app.activity.TuanGouSubmitOrderActivity" />
         <activity android:name="com.sugoodwaimai.app.activity.MovieActivity" />
         <activity android:name="com.sugoodwaimai.app.activity.HotelActivity" />
         <activity android:name="com.sugoodwaimai.app.activity.KtvActivity" />
         <activity android:name="com.sugoodwaimai.app.activity.GoodFoodActivity" />
         <activity android:name="com.sugoodwaimai.app.activity.ShopDetailActivity" />
         <activity android:name="com.sugoodwaimai.app.activity.TuanGouDetailActivity" />
+        <activity android:name="com.sugoodwaimai.app.activity.TuanGouNewDetailActivity" />
         <activity android:name="com.sugoodwaimai.app.activity.RegisterActivity" />
         <activity
             android:name="com.sugoodwaimai.app.activity.SuperMarketMainActivity"

@@ -72,8 +72,8 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 			if (resp.errCode == 0) {
 
 			//	ToastUtil.setToast(this, "支付成功");
-				Intent intent = new Intent("FinishActivity");
-				sendBroadcast(intent);//发送对应的广播
+//				Intent intent = new Intent("FinishActivity");
+//				sendBroadcast(intent);//发送对应的广播
 				Intent intent2 = new Intent("ResultActivity");
 				sendBroadcast(intent2);//发送对应的广播
 

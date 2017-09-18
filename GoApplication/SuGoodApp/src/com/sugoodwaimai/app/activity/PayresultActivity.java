@@ -22,6 +22,8 @@ public class PayresultActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payresult);
+        Intent intentfinish = new Intent("FinishActivity");
+        sendBroadcast(intentfinish);//发送对应的广播
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
          type = bundle.getString("type");

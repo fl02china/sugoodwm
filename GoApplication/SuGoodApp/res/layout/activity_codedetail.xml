@@ -63,7 +63,7 @@
 
 
                 <TextView
-                    android:id="@+id/shopname"
+                    android:id="@+id/goodname"
                     style="@style/SmallText"
                     android:text="SSSSSSS" />
 

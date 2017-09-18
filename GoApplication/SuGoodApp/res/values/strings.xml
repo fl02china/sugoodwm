@@ -83,7 +83,8 @@
     <string name="addr">地址：</string>
     <string name="tuangounum">团购号：</string>
     <string name="usetime">有效期：</string>
-
+    <string name="myy">免预约</string>
+    <string name="sst">随时退</string>
     <string name="sj_title">商家公告</string>
     <string name="push_transmission_data">收到一条透传测试消息</string>
     <string name="add_tag">添加标签</string>

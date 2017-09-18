@@ -52,8 +52,8 @@ public class TuanGouShop implements Serializable {
                 '}';
     }
 
-    public int getPrice() {
-        return price;
+    public String getPrice() {
+        return Double.parseDouble(price+"") / 100 + "";
     }
 
     public void setPrice(int price) {

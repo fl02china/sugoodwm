@@ -209,9 +209,9 @@ public class TakeawayMainActivity extends BaseActivity {
                     }
                     //      params.put("lat", "20.919973");
 //      params.put("lng", "110.084040");
-                    System.out.println("aaaaa111aaaa写死");
-                    initNetData(  "20.919973",   "110.084040", locationCity);
-                 //   initNetData(location.getLatitude() + "", location.getLongitude() + "", locationCity);
+//                    System.out.println("aaaaa111aaaa写死");
+            initNetData(  "20.919973",   "110.084040", locationCity);
+                   //initNetData(location.getLatitude() + "", location.getLongitude() + "", locationCity);
                  //   tvLocalCity.setText(locationCity);
                 } else {
                     //定位失败

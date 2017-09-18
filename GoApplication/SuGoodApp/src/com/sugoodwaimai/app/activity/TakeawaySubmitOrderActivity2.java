@@ -446,6 +446,7 @@ public class TakeawaySubmitOrderActivity2 extends BaseActivity {
         shop = (TakeawayShopInfo.EleBean) getIntent().getSerializableExtra("shop");
 
         shopCarList = SugoodApplication.getInstance().getShopCarProductList();
+
         shopName.setText(shop.getShopName());
         tvPeisong.setText( ("￥" +shop.getLogistics()));
         submitRv.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));

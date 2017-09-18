@@ -244,7 +244,7 @@ public class OrderShangchengAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         @BindView(R.id.addr) TextView addr;
         @BindView(R.id.img)
         SimpleDraweeView img;
-        @BindView(R.id.shopname) TextView shopname;
+        @BindView(R.id.goodname) TextView shopname;
         @BindView(R.id.goodsname) TextView goodsname;
         @BindView(R.id.num) TextView num;
         @BindView(R.id.divider1) View divider1;

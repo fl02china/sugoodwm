@@ -91,9 +91,10 @@ public class ShopCollectionFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
 
+
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                Log.e("sas", "onFailure: "+new String(responseBody) );
             }
         });
     }
