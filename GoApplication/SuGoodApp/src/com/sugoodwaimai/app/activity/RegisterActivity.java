@@ -68,7 +68,7 @@ public class RegisterActivity extends BaseActivity {
                 super.onSuccess(statusCode, headers, response);
                 Log.e(TAG, "address2: "+response.toString());
                 try {
-                    if (!response.getString("session").equals("000")){
+                    if (!response.getString("session").equals("true")){
                         ToastUtil.setToast(RegisterActivity.this, "短信验证失败");
                     }else{
                         ToastUtil.setToast(RegisterActivity.this, "验证码发送成功，请留意短信通知");

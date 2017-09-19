@@ -73,6 +73,7 @@ public class ForgetPWActivity extends BaseActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
+                ToastUtil.setToast(ForgetPWActivity.this, "验证码发送失败");
             }
         });
 
